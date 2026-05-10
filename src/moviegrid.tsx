@@ -1,16 +1,7 @@
+import { Movie } from './types';
 import MovieCard from "./moviecard";
 import "./moviegrid.css";
 
-interface Movie {
-  id: number;
-  title: string;
-  year: number;
-  rating: string;
-  genres: string[];
-  moods: string[];
-  poster: string;
-  overview: string;
-}
 
 interface MovieGridProps {
   movies: Movie[];
