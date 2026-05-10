@@ -1,0 +1,281 @@
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.app-header h1 {
+  font-size: 3rem;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+  letter-spacing: -1px;
+}
+
+.app-header p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 40px;
+}
+
+.nav-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.nav-btn {
+  padding: 10px 24px;
+  background-color: transparent;
+  color: var(--text-secondary);
+  border: 1px solid #333;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nav-btn:hover {
+  background-color: #222;
+  color: var(--text-primary);
+}
+
+.nav-btn.active {
+  background-color: var(--surface-color);
+  color: var(--accent-warm);
+  border-color: var(--accent-warm);
+}
+
+.search-container {
+  margin-bottom: 24px;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 400px;
+  padding: 14px 20px;
+  background-color: var(--surface-color);
+  border: 1px solid #333;
+  color: var(--text-primary);
+  border-radius: 30px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--accent-warm);
+}
+
+.mood-filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 48px;
+}
+
+.mood-btn {
+  padding: 8px 18px;
+  background-color: var(--surface-color);
+  color: var(--text-primary);
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mood-btn:hover {
+  background-color: #2a2a2a;
+}
+
+.mood-btn.active {
+  background-color: var(--accent-warm);
+  color: #000;
+  font-weight: 600;
+}
+
+.loader-container {
+  padding: 100px 0;
+  color: var(--text-secondary);
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #333;
+  border-top-color: var(--accent-warm);
+  border-radius: 50%;
+  margin: 0 auto 20px auto;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.empty-message {
+  padding: 60px 20px;
+  background-color: var(--surface-color);
+  border-radius: 16px;
+  border: 1px dashed #333;
+}
+
+.empty-message h2 {
+  margin-top: 0;
+}
+.empty-message p {
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+.clear-btn {
+  padding: 10px 24px;
+  background-color: var(--accent-warm);
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.clear-btn:hover {
+  background-color: var(--accent-hover);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal-content {
+  background-color: var(--surface-color);
+  border-radius: 16px;
+  display: flex;
+  max-width: 800px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  text-align: left;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.close-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.modal-poster {
+  width: 350px;
+  object-fit: cover;
+}
+
+.modal-details {
+  padding: 40px;
+  flex: 1;
+}
+.modal-details h2 {
+  margin-top: 0;
+  font-size: 2rem;
+  color: white;
+}
+.modal-year {
+  color: var(--text-secondary);
+  font-weight: normal;
+}
+.modal-overview {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-top: 24px;
+}
+/* --- Loading Skeletons --- */
+.skeleton-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 32px;
+  width: 100%;
+}
+
+.skeleton-card {
+  background-color: var(--surface-color, #2a2a2a);
+  border-radius: 12px;
+  height: 420px; /* Rough height of a movie card */
+  animation: pulse 1.5s infinite ease-in-out;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 0.3; }
+  100% { opacity: 0.6; }
+}
+
+@media (max-width: 768px) {
+  .app-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .app-header p {
+    font-size: 1rem;
+  }
+
+  .modal-content {
+    flex-direction: column;
+    width: 95%;
+    max-height: 85vh;
+  }
+
+  .modal-poster {
+    width: 100%;
+    height: 300px;
+  }
+
+  .modal-details {
+    padding: 24px;
+  }
+
+  .modal-details h2 {
+    font-size: 1.5rem;
+  }
+
+  .modal-overview {
+    font-size: 1rem;
+    margin-top: 16px;
+  }
+
+  .mood-btn {
+    padding: 10px 16px;
+    font-size: 1rem;
+  }
+}
