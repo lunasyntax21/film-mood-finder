@@ -1,58 +1,42 @@
-import "./moviecard.css";
+import type { Movie } from './types'; // Use the shared type
+import './moviecard.css';
 
-interface MovieProps {
-  movie: {
-    id: number;
-    title: string;
-    year: number;
-    rating: string;
-    genres: string[];
-    poster: string;
-    overview: string;
-  };
+interface MovieCardProps {
+  movie: Movie;
   onClick: () => void;
-  // 1. Add our new props
-  isSaved: boolean;
-  onToggleWatchlist: () => void;
+  isSaved: boolean; // Match the new logic in MovieGrid
+  onToggleWatchlist: (e: React.MouseEvent) => void;
 }
 
-export default function MovieCard({
-  movie,
-  onClick,
-  isSaved,
-  onToggleWatchlist,
-}: MovieProps) {
+const MovieCard = ({ movie, onClick, isSaved, onToggleWatchlist }: MovieCardProps) => {
   return (
     <div className="movie-card" onClick={onClick}>
-      <img
-        src={movie.poster}
-        alt={`${movie.title} poster`}
-        className="movie-poster"
+      <button 
+        className={`watchlist-btn ${isSaved ? 'saved' : ''}`}
+        onClick={(e) => {
+          e.stopPropagation(); // Prevents opening the modal when clicking the heart
+          onToggleWatchlist(e);
+        }}
+      >
+        {isSaved ? '❤️' : '🤍'}
+      </button>
+      
+      <img 
+        src={`https://image.tmdb.org/t/p/w500${movie.poster}`} 
+        alt={movie.title} 
+        className="movie-poster" 
       />
-
+      
       <div className="movie-info">
-        <h2>
-          {movie.title} <span className="movie-year">({movie.year})</span>
-        </h2>
-
+        <h3>{movie.title}</h3>
         <div className="movie-meta">
-          <span className="movie-rating">{movie.rating}</span>
-          <span className="movie-genres">{movie.genres.join(", ")}</span>
+          <span>{movie.year}</span>
+          {/* .toFixed(1) turns the number into a string for display */}
+          <span className="rating">⭐ {movie.rating.toFixed(1)}</span>
         </div>
-
-        <p className="movie-overview">{movie.overview}</p>
-
-        {/* 2. Update the button to react to its saved state */}
-        <button
-          className={`watchlist-btn ${isSaved ? "saved" : ""}`}
-          onClick={(e) => {
-            e.stopPropagation(); // Stops the modal from opening!
-            onToggleWatchlist();
-          }}
-        >
-          {isSaved ? "✓ Remove from Watchlist" : "+ Add to Watchlist"}
-        </button>
       </div>
     </div>
   );
-}
+};
+
+export default MovieCard;
