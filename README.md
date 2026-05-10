@@ -1,5 +1,6 @@
 🍿 Film Mood Finder
 A sleek, responsive movie discovery application that helps users find the perfect film based on their current emotional "vibe." Instead of browsing by dry categories, users choose moods like "Cozy," "Intense," or "Clever" to get curated results.
+https://github.com/lunasyntax21/film-mood-finder/blob/main/Screenshot%202026-05-10%20215908.png
 
 🚀 [Live Demo Link Coming Soon]
 ✨ Features
