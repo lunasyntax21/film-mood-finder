@@ -1,73 +1,66 @@
-# React + TypeScript + Vite
+🍿 Film Mood Finder
+A sleek, responsive movie discovery application that helps users find the perfect film based on their current emotional "vibe." Instead of browsing by dry categories, users choose moods like "Cozy," "Intense," or "Clever" to get curated results.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🚀 [Live Demo Link Coming Soon]
+✨ Features
+Mood-Based Filtering: Custom logic that maps complex emotions to specific TMDB genre combinations.
 
-Currently, two official plugins are available:
+Real-time Search: Instant movie lookups with a built-in debounce to optimize API usage.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Persistent Watchlist: Save your "must-watch" films to a local watchlist that stays saved even after refreshing the page (via localStorage).
 
-## React Compiler
+Responsive Design: Fully optimized for mobile, tablet, and desktop viewing.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Interactive UI: Modern modal system for viewing movie details and high-fidelity loading skeletons for a premium feel.
 
-## Expanding the ESLint configuration
+🛠️ Tech Stack
+React 18 (Functional Components, Hooks)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+TypeScript (Strict type safety)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+CSS3 (Flexbox, Grid, Custom Variables, Animations)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+TMDB API (Real-world movie data and posters)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Vite (Build tool)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+📦 Installation & Local Setup
+Clone the repository:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Bash
+git clone https://github.com/your-username/film-mood-finder.git
+cd film-mood-finder
+Install dependencies:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Bash
+npm install
+Set up environment variables:
+
+Create a .env file in the root directory.
+
+Add your TMDB API Key:
+
+Code snippet
+VITE_TMDB_API_KEY=your_api_key_here
+Run the app:
+
+Bash
+npm run dev
+🧠 What I Learned
+API Transformation: How to take "messy" external API data and map it into clean, typed interfaces for a React frontend.
+
+Performance Optimization: Implementing debouncing for search inputs to prevent unnecessary API calls and rate-limiting.
+
+Security Best Practices: Managing sensitive API keys using .env files and ensuring they are never committed to version control via .gitignore.
+
+UX Design: Using loading skeletons instead of basic spinners to reduce perceived wait times.
+
+🔮 Future Improvements
+User Reviews: Integrate real user ratings and reviews from the TMDB community.
+
+Trailer Integration: Add a "Play Trailer" button that opens a YouTube embed inside the modal.
+
+AI Recommendations: Use a lightweight AI model to suggest movies based on more complex natural language prompts.
+
+💼 Resume Bullet Point
+Built a responsive movie discovery app that recommends films by mood using React, TypeScript, CSS3, TMDB API, and localStorage watchlist persistence.
