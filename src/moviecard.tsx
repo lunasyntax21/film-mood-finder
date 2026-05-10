@@ -32,7 +32,7 @@ const MovieCard = ({ movie, onClick, isSaved, onToggleWatchlist }: MovieCardProp
         <div className="movie-meta">
           <span>{movie.year}</span>
           {/* .toFixed(1) turns the number into a string for display */}
-          <span className="rating">⭐ {movie.rating.toFixed(1)}</span>
+          <span className="rating">⭐ {Number(movie.rating || 0).toFixed(1)}</span>
         </div>
       </div>
     </div>

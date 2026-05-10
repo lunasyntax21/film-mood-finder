@@ -1,7 +1,7 @@
 import type { Movie } from './types';
 import { useState, useEffect } from 'react';
 import './App.css';
-import MovieGrid from './moviegrid';
+import moviegrid from './moviegrid';
 import { fetchMovies } from './api'; 
 
 

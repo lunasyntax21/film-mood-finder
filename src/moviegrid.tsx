@@ -1,5 +1,5 @@
 import type { Movie } from './types';
-import MovieCard from "./moviecard";
+import moviecard from "./moviecard";
 import "./moviegrid.css";
 
 
